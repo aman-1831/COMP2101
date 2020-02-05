@@ -1,3 +1,4 @@
+
 #!/bin/bash
 # This script demonstrates testing to see if 2 strings are the same
 # it also demonstrates using conditional execution
@@ -9,7 +10,31 @@
 # TASK 3: Improve it by giving them 5 tries to get it right before failing
 #           *** Do not use the exit command, and do not use a loop (e.g. while or for)
 
-myString="TestString"
-referenceString="password"
 
-[ $myString = $referenceString ] && echo "Correct!" || echo "Incorrect."
+completed="String matching successful."
+ferror="Please try again."
+referenceString="Password"
+read -s -p "Enter the String:" myString
+echo
+if [ $myString = $referenceString ]; then
+  echo "$completed"
+  echo
+  else
+    echo "$ferror"
+    read -s -p "Enter the String:" myString
+    if [ $myString = $referenceString ]; then
+      echo "$completed"
+      echo
+    else
+      echo
+      echo "$ferror"
+      read -s -p "Enter the String:" myString
+    if [ $myString = $referenceString ]; then
+      echo "$completed"
+      echo
+    else
+      echo
+      echo "$ferror"
+    fi
+  fi
+fi
