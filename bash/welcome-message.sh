@@ -20,45 +20,12 @@
 title="Overlord"
 myname="dennis"
 hostname="myhostname"
-hostname=$(hostname)
 
-
-day=$(date +%A)
-hour=$(date +%I)
-minute=$(date +%M)
-meridian=$(date +%p)
-
-
-
-
-if [ $day == "Monday" ]
-then
-  title="Monday will be working day"
-elif [ $day == "Tuesday" ]
-then
-  title="Tuesday is pizza day"
-elif [ $day == "Wednesday" ]
-then
-  title="Wednesday might be good hair day"
-elif [ $day == "Thursday" ]
-then
-  title="Tuesday is praying day"
-elif [ $day == "Friday" ]
-then
-  title="Friday is close to weekend"
-elif [ $day == "Saturday" ]
-then
-  title="Saturday is studying day"
-else
-  title="Sunday is lazy day"
-
-
-fi
 ###############
 # Main        #
 ###############
 cat <<EOF
 
-Welcome to planet $hostname, "$title $USER!" ,It is $hour:$minute $meridian on $day"
+Welcome to planet $hostname, "$title $myname!"
 
 EOF
