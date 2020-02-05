@@ -17,57 +17,48 @@
 ###############
 # Variables   #
 ###############
-echo "Enter your name:"
-read USER
-
+title="Overlord"
+myname="dennis"
+hostname="myhostname"
 hostname=$(hostname)
 
-###########################
-# Task 2 date and time     #
-##########################
-day=$(date +"%A")
-date=$(date +"%I:%M:%S %p")
+
+day=$(date +%A)
+hour=$(date +%I)
+minute=$(date +%M)
+meridian=$(date +%p)
 
 
-#############################################
-#            Conditional statement          #
-#############################################
+
 
 if [ $day == "Monday" ]
 then
-  title="Monday is the working day"
-
-elif [ $day == "Tuesday"  ]
+  title="Monday will be working day"
+elif [ $day == "Tuesday" ]
 then
-  title="Tuesday may be studying day"
-
+  title="Tuesday is pizza day"
 elif [ $day == "Wednesday" ]
 then
-  title="Wednesday is the gym day"
-
+  title="Wednesday might be good hair day"
 elif [ $day == "Thursday" ]
 then
-  title="Thursday is the favourite day"
-
+  title="Tuesday is praying day"
 elif [ $day == "Friday" ]
 then
-  title="Friday is the working day"
-
+  title="Friday is close to weekend"
 elif [ $day == "Saturday" ]
 then
-  title="Saturday is party day"
-
+  title="Saturday is studying day"
 else
-  title="Sunday is the best day"
+  title="Sunday is lazy day"
+
 
 fi
-
-###############################################
-#                   Main                      #
-###############################################
-
+###############
+# Main        #
+###############
 cat <<EOF
 
-Welcome to planet $hostname, "$title $USER!"
-It is $day at $date.
+Welcome to planet $hostname, "$title $USER!" ,It is $hour:$minute $meridian on $day"
+
 EOF
