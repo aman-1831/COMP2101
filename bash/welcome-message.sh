@@ -18,14 +18,49 @@
 # Variables   #
 ###############
 title="Overlord"
-myname="dennis"
+$USER="Amandeep"
 hostname="myhostname"
+hostname=$(hostname)
+
+
+day=$(date +%A)
+hour=$(date +%I)
+minute=$(date +%M)
+meridian=$(date +%p)
+
+
+
+
+if  [ $day == "MONDAY" ]
+then
+  title="Monday is working day"
+elif [ $day == "Tuesday" ]
+then
+  title="Tuesday is gym day"
+elif [ $day == "Wednesday" ]
+then
+  title="Wednesday is sleeping day"
+elif [ $day == "Thursday" ]
+then
+  title="Thursday is praying day"
+elif [ $day == "Friday" ]
+then
+  title="Friday is shoping day"
+elif [ $day == "Saturday" ]
+then
+  title="Saturday is weekending day"
+else
+  title="Sunday is holiday"
+
+
+fi
+
 
 ###############
 # Main        #
 ###############
 cat <<EOF
 
-Welcome to planet $hostname, "$title $myname!"
+Welcome to planet $hostname, "$title $USER!" ,It is $hour:$minute $meridian on $day"
 
 EOF
