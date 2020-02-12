@@ -11,7 +11,7 @@
 #           *** Do not use the exit command, and do not use a loop (e.g. while or for)
 
 
-completed="String matching successful."
+completed="String matched successfully."
 ferror="Please try again."
 referenceString="Password"
 read -s -p "Enter the String:" myString
@@ -30,7 +30,7 @@ if [ $myString = $referenceString ]; then
       echo "$ferror"
       read -s -p "Enter the String:" myString
     if [ $myString = $referenceString ]; then
-      echo "$completed"
+      echo "$It is completed"
       echo
     else
       echo
